@@ -21,6 +21,7 @@ const io = socketIO(server, {
 });
 
 app.get("/", (req: any, res: any) => {
+  console.log("server get api executed")
   res.send("Server running")
 })
 
