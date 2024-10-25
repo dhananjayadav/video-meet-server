@@ -8,9 +8,6 @@ const server = http.createServer(app);
 
 // Enable CORS for both Express and Socket.IO
 let allowedOrigins = ["https://videomeetingweb.netlify.app", "http://localhost:3000"];
-try {
-  allowedOrigins = JSON.parse(process.env.ALLOWED_ORIGINS || "{}");
-} catch (err) {}
 
 app.use(cors({ origin: allowedOrigins }));
 
