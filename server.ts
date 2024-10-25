@@ -20,6 +20,10 @@ const io = socketIO(server, {
   },
 });
 
+app.get("/", (req: any, res: any) => {
+  res.send("Server running")
+})
+
 // Handle Socket.IO connections
 io.on("connection", (socket: any) => {
   console.log(`New client connected: ${socket.id}`);
