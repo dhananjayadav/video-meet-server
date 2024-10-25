@@ -12,11 +12,11 @@ try {
   allowedOrigins = JSON.parse(process.env.ALLOWED_ORIGINS || "{}");
 } catch (err) {}
 
-app.use(cors({ origin: allowedOrigins }));
+app.use(cors({ origin: "*" }));
 
 const io = socketIO(server, {
   cors: {
-    origin: allowedOrigins,
+    origin: "*",
   },
 });
 
